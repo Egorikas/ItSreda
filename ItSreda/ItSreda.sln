@@ -3,17 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Example1. StateMachine", "ItSreda\Example1. StateMachine.csproj", "{4C9DCFA8-CAB6-47BC-AFF9-04383BA8FDF3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Example2. StateMachine", "ItSreda\Example2. StateMachine.csproj", "{4C9DCFA8-CAB6-47BC-AFF9-04383BA8FDF3}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomAwaiter", "CustomAwaiter\CustomAwaiter.csproj", "{58A8AD1E-A5B1-4F5A-96A2-EA9A06F40686}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exception", "Exception\Exception.csproj", "{FE03B93F-E2A0-452E-9D0E-169F47626FB2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Example2.Deadlock", "Example2.Deadlock\Example2.Deadlock.csproj", "{0C8C74C9-B159-426F-A59F-CD617161CA3E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Example3.Deadlock", "Example2.Deadlock\Example3.Deadlock.csproj", "{0C8C74C9-B159-426F-A59F-CD617161CA3E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Example3.Deadlock", "WebApplication1\Example3.Deadlock.csproj", "{01E44A18-9F30-438A-A163-DEEF08A142AA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Example4.Deadlock", "WebApplication1\Example4.Deadlock.csproj", "{01E44A18-9F30-438A-A163-DEEF08A142AA}"
 EndProject
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Example4.WithOutDeadlock", "Example4.WithOutDeadlock\Example4.WithOutDeadlock.xproj", "{F22E19FC-CD6D-4F69-B4A9-5A0568BAFF86}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Example1.ThreadingGame", "Example1.ThreadingGame\Example1.ThreadingGame.csproj", "{5AE59B10-E193-46EE-8644-4EEAF2FC3F35}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{F22E19FC-CD6D-4F69-B4A9-5A0568BAFF86}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F22E19FC-CD6D-4F69-B4A9-5A0568BAFF86}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F22E19FC-CD6D-4F69-B4A9-5A0568BAFF86}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5AE59B10-E193-46EE-8644-4EEAF2FC3F35}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5AE59B10-E193-46EE-8644-4EEAF2FC3F35}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5AE59B10-E193-46EE-8644-4EEAF2FC3F35}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5AE59B10-E193-46EE-8644-4EEAF2FC3F35}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
