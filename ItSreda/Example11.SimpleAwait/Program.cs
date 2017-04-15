@@ -1,18 +1,14 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
-using System.Threading;
+using System.Linq;
 using System.Threading.Tasks;
 
-namespace Example1.ThreadingGame
+namespace Example11.SimpleAwait
 {
-    class Program
+    public class Program
     {
-        static void Main(string[] args)
-        {
-            Example1().Wait();
-        }
-
-        static async Task Example1()
+        public static async Task Main(string[] args)
         {
             using (var reader = File.OpenText("Words.txt"))
             {
@@ -23,3 +19,4 @@ namespace Example1.ThreadingGame
         }
     }
 }
+

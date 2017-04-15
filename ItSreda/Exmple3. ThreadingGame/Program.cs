@@ -18,12 +18,19 @@ namespace Exmple3.ThreadingGame
         static async Task Example1()
         {
             Console.WriteLine(Thread.CurrentThread.ManagedThreadId);
+            await Task.Delay(900);
+            Console.WriteLine(Thread.CurrentThread.ManagedThreadId);
+        }
+
+        static async Task Example2()
+        {
+            Console.WriteLine(Thread.CurrentThread.ManagedThreadId);
             await Task.FromResult(900);
             Console.WriteLine(Thread.CurrentThread.ManagedThreadId);
         }
 
 
-        static async Task Example2()
+        static async Task Example3()
         {
             Console.WriteLine($"Thread start of the method - {Thread.CurrentThread.ManagedThreadId}");
             var firstTask = Task.Run(async () =>
