@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -32,12 +29,13 @@ namespace Exmple3.ThreadingGame
 
         static async Task Example3()
         {
-            Console.WriteLine($"Thread start of the method - {Thread.CurrentThread.ManagedThreadId}");
+            Console.WriteLine($"Thread start of Example3 - {Thread.CurrentThread.ManagedThreadId}");
             var firstTask = Task.Run(async () =>
             {
-                Console.WriteLine($"Additional Task before - {Thread.CurrentThread.ManagedThreadId}");
+                Console.WriteLine($"Task.Run before await- {Thread.CurrentThread.ManagedThreadId}");
+                //await Task.FromResult(900);
                 await Task.Delay(900);
-                Console.WriteLine($"Additional Task after  - {Thread.CurrentThread.ManagedThreadId}");
+                Console.WriteLine($"Task.Run Task await  - {Thread.CurrentThread.ManagedThreadId}");
             });
             Console.WriteLine($"Thread before Task.WhenAll - {Thread.CurrentThread.ManagedThreadId}");
             await Task.WhenAll(firstTask);

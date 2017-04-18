@@ -11,29 +11,46 @@ namespace Exception
     {
         private static void Main(string[] args)
         {
-            Task<int> task = FetchOrDefaultAsync();
-            Console.WriteLine("Result: {0}", task.Result);
+            try
+            {
+                Example1().Wait();
+            }
+            catch (System.AggregateException e)
+            {
+                Console.WriteLine(e);
+            }
             Console.ReadLine();
         }
 
-        private static async Task<int> FetchOrDefaultAsync()
+        public static async Task Example1()
         {
-            // Nothing special about IOException here
+            await Task.Delay(30);
+            throw new NotImplementedException("bang");
+        }
+
+        public static async void Example2()
+        {
+            await Task.Delay(30);
+            throw new NotImplementedException("bang-bang");
+        }
+
+
+        public static async Task Example3()
+        {
             try
             {
-                Task<int> fetcher = Task<int>.Factory.StartNew(() => { throw new IOException(); });
-                return await fetcher;
-            }
-            catch (IOException e)
-            {
-                Console.WriteLine("Caught IOException: {0}", e);
-                return 5;
+                Execute(async () => { throw new NotImplementedException("bang-bang-bang"); });
             }
             catch (System.Exception e)
             {
-                Console.WriteLine("Caught arbitrary exception: {0}", e);
-                return 10;
+                Console.WriteLine("An exception occured: " + e.Message);
             }
+            await Task.Delay(TimeSpan.FromSeconds(1));
+        }
+
+        public static void Execute(Action action)
+        {
+            action();
         }
     }
 }

@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Runtime.CompilerServices;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace CustomAwaiter
@@ -11,15 +8,15 @@ namespace CustomAwaiter
     {
         static void Main(string[] args)
         {
-            SimpleWaitAsync();
+            SimpleWaitAsync().Wait();
             Console.ReadLine();
         }
 
-        static async void SimpleWaitAsync()
+        static async Task SimpleWaitAsync()
         {
-            SimpleInt32Awaitable awaitable = new SimpleInt32Awaitable();
-            int result = await awaitable;
-            var i = 0;
+            var awaitable = new SimpleInt32Awaitable();
+            var result = await awaitable;
+            Console.WriteLine(result);
         }
 
     }
@@ -34,10 +31,7 @@ namespace CustomAwaiter
 
     public struct SimpleInt32Awaiter : INotifyCompletion
     {
-        public bool IsCompleted
-        {
-            get { return true; }
-        }
+        public bool IsCompleted => true;
 
         public void OnCompleted(Action continuation)
         {
